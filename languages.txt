@@ -1,4 +1,4 @@
-1.Ruby -- docker run -it -v %cd%\day_1\content:/content aoc_day1
+1.Ruby # docker run --rm -it -v %cd%\day_1\content:/aoc/content -v %cd%\input\:/aoc/input aoc_day1
 2.
 3.
 4.
