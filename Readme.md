@@ -3,6 +3,7 @@ Solving the advent of code programming challenge with a new language every day!
 https://adventofcode.com/
 
 Day 1: Ruby
+Day 2: Ada
 
 
 # To run
