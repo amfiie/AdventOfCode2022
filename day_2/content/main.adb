@@ -5,19 +5,14 @@ with Ada.Text_IO.Unbounded_IO; use Ada.Text_IO.Unbounded_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 procedure Main is
-   F : File_Type;
-   File_Name : constant String := "../input/input2.txt";
-   score1 : Integer := 0;
-   score2 : Integer := 0;
-   line : Unbounded_String;
-   c1 : Character;
-   c2 : Character;
-begin
-	Open (F, In_File, File_Name);
-	while not End_Of_File (F) loop
-		line := Get_Line(F);
-		c1 := Element(line, 1);
-		c2 := Element(line, 3);
+	File_Name : constant String := "../input/input2.txt";
+   
+	procedure Score_Play(
+		c1 : in Character;
+		c2 : in Character;
+		score1 : in out Integer;
+		score2 : in out Integer) is
+	begin
 		if c1 = 'A' then
 			if c2 = 'X' then
 				score1 := score1 + 1 + 3;
@@ -52,9 +47,20 @@ begin
 				score2 := score2 + 1 + 6;
 			end if;
 		end if;
-   end loop;
-   Put(score1, width => 0);
-   Put_Line("");
-   Put(score2, width => 0);
-   Close (F);
+	end Score_Play;
+
+	F : File_Type;
+	score1 : Integer := 0;
+	score2 : Integer := 0;
+	line : Unbounded_String;
+begin
+	Open (F, In_File, File_Name);
+	while not End_Of_File (F) loop
+		line := Get_Line(F);
+		Score_Play(Element(line, 1), Element(line, 3), score1, score2);
+	end loop;
+	Put(score1, width => 0);
+	Put_Line("");
+	Put(score2, width => 0);
+	Close (F);
 end Main;
