@@ -5,7 +5,7 @@ sub item_priority {
 	if ($val >= ord("a") and $val <= ord("z")) {
 		return $val + 1 - ord("a");
 	}
-	return $val + 27 -ord("A");
+	return $val + 27 - ord("A");
 }
 
 sub find_duplicate_char {
@@ -30,12 +30,11 @@ foreach $line (@lines) {
 	my $first = substr $line, 0, length($line) / 2;
 	my $second = substr $line, length($line) / 2;
 	$sum += item_priority(find_duplicate_char($first, $second));
-
 }
 
 my $i = 0;
 my $sum2 = 0;
-while ($i < scalar(@lines)) {
+while ($i < $#lines) {
 	my $first = $lines[$i];
 	my $second = $lines[$i + 1];
 	my $third = $lines[$i + 2];
