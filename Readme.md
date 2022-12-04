@@ -5,6 +5,7 @@ https://adventofcode.com/
 Day 1: Ruby
 Day 2: Ada
 Day 3: Perl
+Day 4: Haskell
 
 
 # To run
