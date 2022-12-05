@@ -12,7 +12,7 @@ Day 7: Lisp
 Day 8: PHP
 Day 9: Erlang
 Day 10: Basic
-Day 11: 
+Day 11: Elixir
 Day 12: Lua
 Day 13: Java
 Day 14: Scala
@@ -21,7 +21,7 @@ Day 16: Python
 Day 17: Swift
 Day 18: Zig
 Day 19: C
-Day 20: Javascript
+Day 20: Typescript
 Day 21: Carbon
 Day 22: Vala
 Day 23: C#
