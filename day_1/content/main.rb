@@ -1,20 +1,20 @@
 #!/usr/bin/ruby -w
 
-File.open("../input/input1.txt", "r") do |input|
-	content = input.readlines()
-
-	list = [0]
-	
-	content.each do |line|
-		if !line.chomp.empty?
-			list[-1] += line.to_i
-		else
-			list.push(0)
-		end
-	end
-	
-	list.sort!
-	
-	puts list[-1]
-	puts list[-1] + list[-2] + list[-3]
+file_path = '../input/input1.txt'
+f = open file_path
+sum = 0
+sums = []
+f.each do |line|
+    if line.chomp.empty?
+        sums.append(sum)
+        sum = 0
+    else
+        sum += line.to_i
+    end
 end
+f.close
+
+sums.sort!
+
+puts "The Elf carrying the most calories is : #{sums[-1]}\n"
+puts "The top three Elfs are carrying in total : #{sums[-1] + sums[-2] + sums[-3]} calories\n"
